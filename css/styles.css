@@ -127,6 +127,7 @@ h1,h2,h3,p{
 }
 
 .contact-icon{
+  fill: var(--primary-grey-color);
   margin-right: 10px;
   transition: fill 250ms var(--timing-function);
 }
@@ -287,17 +288,18 @@ h1,h2,h3,p{
 
 img{
   display: block;
-  position: relative;
 }
 
 .image-items{
   display: flex;
   column-gap: 30px;
-  
+}
+
+.image-item{
+  position: relative;
 }
 
 .descript{
-
  position: absolute;
  display: flex;
  align-items: center;
@@ -708,7 +710,7 @@ img{
 
   background-color: rgba(0, 0, 0, 0.2);
 
-  transition: opacity 250 ms var(--timing-function);
+  transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
 }
 
 
@@ -716,6 +718,10 @@ img{
   opacity: 0;
   visibility: visible;
   pointer-events: none;
+}
+
+.backdrop.is-hidden .modal{
+ transform: translate(-50%, -50%) scale(0);
 }
 
 .modal{
@@ -729,6 +735,7 @@ img{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--timing-function);
 
 }
 
